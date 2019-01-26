@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshromea/hotrestaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshromea/hotrestaurant/issues"
+  },
+  "homepage": "https://github.com/joshromea/hotrestaurant#readme",
+  "dependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
