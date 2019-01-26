@@ -7,5 +7,4 @@ class Waitinglist {
     }
 }
 
-
 module.exports = Waitinglist;

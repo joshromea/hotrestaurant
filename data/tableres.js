@@ -7,6 +7,4 @@ class TableRes {
     }
 }
 
-const newTable = new TableRes();
-
 module.exports = TableRes;
