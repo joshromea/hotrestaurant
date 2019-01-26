@@ -7,4 +7,6 @@ class Waitinglist {
     }
 }
 
+const waitList = [];
+
 module.exports = Waitinglist;

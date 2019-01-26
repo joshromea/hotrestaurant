@@ -7,4 +7,6 @@ class TableRes {
     }
 }
 
+const tableResArr = [];
+
 module.exports = TableRes;
