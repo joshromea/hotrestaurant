@@ -23,20 +23,81 @@
                     <a class="btn btn-primary btn-lg justify-content-center" href="./reserve.html" role="button">Make
                         Reservation</a>
                 </div>
-                <div class="col-md-3"></div>
             </div>
         </div>
-        <h2>Current Reservations</h2>
-        <div id="teblediv"></div>
-        <h2>Waiting List</h2>
-        <div id="waitlistdiv"></div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <a href="">API Tables </a>
-            <p> | </p>
-            <a href=""> API Wait List</a>
-        </div>
+    </div class="card-header">
+    <h2>Current Reservations</h2>
     </div>
+    <div class="card-body">
+        <ul id="tableList" class="list-group"></ul>
+    </div>
+
+    <div class="card-header">
+        <h2>Waiting List</h2>
+    </div>
+    <div class="card-body">
+        <ul id="waitList" class="list-group"></ul>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <a href="/api/tables">API Tables </a>
+        <p> | </p>
+        <a href="/api/waitlist"> API Wait List</a>
+    </div>
+    </div>
+    <script type="Text/Javascript">
+
+function tableQuery() {
+
+    $.ajax({ url: "/api/tables", method: "GET" })
+      .then(function(tableData) {
+        console.log(tableData);
+    
+    for (i=0; i<tableData.length; i++){
+        let tableList = $("#tableList");
+
+let listItem = $("<li class='list-group-item mt-4'>");
+
+listItem.append(
+  $("<h2>").text("Table #" + (i + 1)),
+  $("<h2>").text("ID: " + tableData[i].uniqueID),
+  $("<h2>").text("Name: " + tableData[i].name),
+  $("<h2>").text("Email: " + tableData[i].email),
+  $("<h2>").text("Phone: " + tableData[i].phone)
+);
+
+tableList.append(listItem);
+}
+});
+    };
+
+    function waitQuery() {
+
+$.ajax({ url: "/api/waitlist", method: "GET" })
+  .then(function(waitData) {
+    console.log(waitData);
+
+for (i=0; i<waitData.length; i++){
+    let waitList = $("#waitList");
+
+let listItem = $("<li class='list-group-item mt-4'>");
+
+listItem.append(
+$("<h2>").text("Table #" + (i + 1)),
+$("<h2>").text("ID: " + waitData[i].uniqueID),
+$("<h2>").text("Name: " + waitData[i].name),
+$("<h2>").text("Email: " + waitData[i].email),
+$("<h2>").text("Phone: " + waitData[i].phone)
+);
+
+waitList.append(listItem);
+}
+});
+};
+tableQuery();
+waitQuery();
+
+</script>
 </body>
 
 </html>
