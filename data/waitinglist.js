@@ -1,4 +1,4 @@
-class TableRes {
+class Waitinglist {
     constructor(name, phone, email, uniqueID) {
         this.name = name;
         this.phone = phone;
@@ -7,4 +7,5 @@ class TableRes {
     }
 }
 
-module.exports = TableRes;
+
+module.exports = Waitinglist;
