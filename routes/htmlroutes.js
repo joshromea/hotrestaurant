@@ -13,3 +13,4 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname, "tables.html"));
     })
 }
+
